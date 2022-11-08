@@ -1,0 +1,9 @@
+.Boutons{
+    display: flex;
+    justify-content: center;
+}
+
+.Search{
+    display: flex;
+    justify-content: right;
+}
