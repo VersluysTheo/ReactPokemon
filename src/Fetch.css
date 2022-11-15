@@ -1,0 +1,16 @@
+.testcon{
+    margin: auto;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+.testcard{
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: auto;
+    width: 70vw;
+}
+.card-img-top{
+    height: 150px;
+}

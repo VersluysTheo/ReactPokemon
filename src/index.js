@@ -3,24 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Routes, Route , BrowserRouter } from "react-router-dom";
+import { Routes, Route , BrowserRouter} from "react-router-dom";
 import NotFound from './assets/NotFound';
 import Liste from './assets/component/Liste';
+import FormApp from './assets/component/Form';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="Liste" element={<Liste />} />
+        <Route path="/liste" element={<Liste />} />
+        <Route path="/addpokemon" element={<FormApp />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

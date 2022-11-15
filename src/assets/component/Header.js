@@ -9,6 +9,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import '../component/Header.css';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -54,6 +56,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+  const navigate = useNavigate();
+
+const navigateToListe = () => {
+    navigate('/liste');
+  };
+
+  const navigateHome = () => {
+    navigate('/');
+  };
+
+  const navigateToAddpokemon = () =>{
+    navigate('/addpokemon');
+  }
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" style={{ background: '#000000' }}>
@@ -66,8 +81,9 @@ export default function SearchAppBar() {
                             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                         >
                             <Stack spacing={2} direction="row">
-                                <Button variant="outlined" style={{ background: 'radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%)', color: '#ffffff' }}>Home</Button>
-                                <Button variant="outlined" style={{ background: 'radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%)', color: '#ffffff' }}>Liste</Button>
+                                <Button variant="outlined" style={{ background: 'radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%)', color: '#ffffff' }} onClick={navigateHome}>Home</Button>
+                                <Button variant="outlined" style={{ background: 'radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%)', color: '#ffffff' }} onClick={navigateToListe}>Liste</Button>
+                                <Button variant="outlined" style={{ background: 'radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%)', color: '#ffffff' }} onClick={navigateToAddpokemon}>Ajouter un Pokemon</Button>
                                 <p> Nomekop </p>
                             </Stack>
                         </Typography>
